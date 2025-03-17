@@ -89,3 +89,21 @@ def compute_log(x: int) -> float | str:
         return "Logarithm is undefined for values less than or equal to 0."
     
     return math.log(x)
+
+@tool
+def write_str_to_txt(string_data: str, txt_filename: str):
+    """
+    Writes a string to a txt file.
+
+    This function takes a string and writes it to a text file. If the file already exists, 
+    it will be overwritten with the new data.
+
+    Args:
+        string_data (str): The string containing the data to be written to the file.
+        txt_filename (str): The name of the text file to which the data should be written.
+    """
+    # Write the string data to the text file
+    with open(txt_filename, mode='w', encoding='utf-8') as file:
+        file.write(string_data)
+
+    print(f"Data successfully written to {txt_filename}")
